@@ -24,7 +24,8 @@ MainView::MainView(Server& server, Client& client, QWidget* parent)
 
     connect(&_participantsModel, &ParticipantsModel::msgCame, _ui.log, &Log::normal);
 
-    connect(_ui.participantNameLineEdit, &QLineEdit::editingFinished, this, &MainView::setName);
+    connect(_ui.changeNameButton, &QPushButton::clicked, this, &MainView::setName);
+    connect(_ui.participantNameLineEdit, &QLineEdit::returnPressed, this, &MainView::setName);
     connect(_ui.sendMsgButton, &QPushButton::clicked, this, &MainView::send);
     connect(_ui.msgLineEdit, &QLineEdit::returnPressed, this, &MainView::send);
 
@@ -45,12 +46,7 @@ void MainView::send()
 void MainView::setName()
 {
     const auto name = _ui.participantNameLineEdit->text();
-    if (name.isEmpty())
-    {
-        _ui.participantNameLineEdit->setText(Participant::defaultName());
-    }
-
-    _peersModel.setName(_ui.participantNameLineEdit->text());
+    _peersModel.setName(name.isEmpty() ? Participant::defaultName() : name);
 }
 
 void MainView::ban()

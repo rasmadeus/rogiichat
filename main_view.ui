@@ -75,7 +75,7 @@
     <number>1</number>
    </attribute>
    <widget class="QWidget" name="dockWidgetContents">
-    <layout class="QVBoxLayout" name="participantInfoLayout">
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
       <widget class="QLineEdit" name="participantNameLineEdit">
        <property name="text">
@@ -86,6 +86,13 @@
        </property>
        <property name="placeholderText">
         <string>Type your nickname...</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="changeNameButton">
+       <property name="text">
+        <string>Change nickname</string>
        </property>
       </widget>
      </item>
