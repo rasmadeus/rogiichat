@@ -5,6 +5,8 @@ class Participant;
 
 class ParticipantsModel : public QAbstractListModel
 {
+    Q_OBJECT
+
 public:
     explicit ParticipantsModel(QObject* parent);
 
@@ -15,10 +17,19 @@ public:
 public:
     void appendParticipant(qintptr socketDescriptor);
     void appendParticipant(const QHostAddress& ip, quint16 port);
+    void setName(const QString& name);
+    void send(const QString& msg);
+
+signals:
+    void connected(const QString& header, const QString& body);
+    void disconnected(const QString& header, const QString& body);
+    void error(const QString& header, const QString& body);
+    void msgCame(const QString& header, const QString& body);
 
 private:
     void appendParticipant(Participant* participant);
     void removeParticipant();
+    void onNameChanged();
 
 private:
     QVector<Participant*> _participants;

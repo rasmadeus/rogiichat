@@ -15,6 +15,10 @@ public:
     explicit MainView(Server& server, Client& client, QWidget* parent);
 
 private:
+    void send();
+    void setName();
+
+private:
     Ui::MainView _ui;
     Server& _server;
     Client& _client;

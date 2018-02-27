@@ -13,14 +13,16 @@ SOURCES += \
     client.cpp \
     server.cpp \
     participants_model.cpp \
-    participant.cpp
+    participant.cpp \
+    log.cpp
 
 HEADERS += \
         main_view.h \
     client.h \
     server.h \
     participants_model.h \
-    participant.h
+    participant.h \
+    log.h
 
 FORMS += \
         main_view.ui

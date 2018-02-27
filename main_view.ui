@@ -16,7 +16,7 @@
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QTextBrowser" name="log">
+     <widget class="Log" name="log">
       <property name="documentTitle">
        <string/>
       </property>
@@ -57,6 +57,13 @@
      <item>
       <widget class="QListView" name="participantsView"/>
      </item>
+     <item>
+      <widget class="QPushButton" name="removeParticipantButton">
+       <property name="text">
+        <string>Remove selected</string>
+       </property>
+      </widget>
+     </item>
     </layout>
    </widget>
   </widget>
@@ -72,7 +79,10 @@
      <item>
       <widget class="QLineEdit" name="participantNameLineEdit">
        <property name="text">
-        <string>Anonym</string>
+        <string/>
+       </property>
+       <property name="maxLength">
+        <number>64</number>
        </property>
        <property name="placeholderText">
         <string>Type your nickname...</string>
@@ -82,7 +92,15 @@
     </layout>
    </widget>
   </widget>
+  <widget class="QStatusBar" name="statusBar"/>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>Log</class>
+   <extends>QTextBrowser</extends>
+   <header>log.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
