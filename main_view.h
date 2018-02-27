@@ -1,6 +1,7 @@
 #ifndef MAIN_VIEW_H
 #define MAIN_VIEW_H
 
+#include "pch.h"
 #include "participants_model.h"
 #include "ui_main_view.h"
 

@@ -1,6 +1,8 @@
 #ifndef PARTICIPANTS_MODEL_H
 #define PARTICIPANTS_MODEL_H
 
+#include "pch.h"
+
 class Participant;
 
 class ParticipantsModel : public QAbstractListModel

@@ -1,6 +1,8 @@
 #ifndef LOG_H
 #define LOG_H
 
+#include "pch.h"
+
 class Log : public QTextBrowser
 {
     Q_OBJECT

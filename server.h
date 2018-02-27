@@ -1,6 +1,8 @@
 #ifndef SERVER_H
 #define SERVER_H
 
+#include "pch.h"
+
 class Server : public QTcpServer
 {
     Q_OBJECT

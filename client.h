@@ -1,6 +1,8 @@
 #ifndef CLIENT_H
 #define CLIENT_H
 
+#include "pch.h"
+
 class Server;
 
 class Client : public QObject

@@ -1,6 +1,7 @@
 #ifndef PARTICIPANT_H
 #define PARTICIPANT_H
 
+#include "pch.h"
 
 class Participant : public QObject
 {
