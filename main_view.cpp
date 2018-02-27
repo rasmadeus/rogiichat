@@ -27,6 +27,8 @@ MainView::MainView(Server& server, Client& client, QWidget* parent)
     connect(_ui.participantNameLineEdit, &QLineEdit::editingFinished, this, &MainView::setName);
     connect(_ui.sendMsgButton, &QPushButton::clicked, this, &MainView::send);
     connect(_ui.msgLineEdit, &QLineEdit::returnPressed, this, &MainView::send);
+
+    connect(_ui.removeParticipantButton, &QPushButton::clicked, this, &MainView::ban);
 }
 
 void MainView::send()
@@ -36,6 +38,7 @@ void MainView::send()
     {
         _ui.log->accent(_ui.participantNameLineEdit->text(), msg);
         _peersModel.send(msg);
+        _ui.msgLineEdit->clear();
     }
 }
 
@@ -48,4 +51,9 @@ void MainView::setName()
     }
 
     _peersModel.setName(_ui.participantNameLineEdit->text());
+}
+
+void MainView::ban()
+{
+    _participantsModel.ban(_ui.participantsView->currentIndex());
 }

@@ -19,6 +19,7 @@ public:
     explicit Participant(const QHostAddress& ip, quint16 port, QObject* parent);
     explicit Participant(qintptr socketDescriptor, QObject* parent);
 
+    void close();
     void send(const QString& msg);
     const QString& name() const { return _name; }
     void setName(const QString& name);

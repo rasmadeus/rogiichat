@@ -34,6 +34,14 @@ QVariant ParticipantsModel::data(const QModelIndex& index, int role) const
     }
 }
 
+void ParticipantsModel::ban(const QModelIndex& index)
+{
+    if (index.isValid())
+    {
+        _participants[index.row()]->close();
+    }
+}
+
 void ParticipantsModel::appendParticipant(qintptr socketDescriptor)
 {
     appendParticipant(new Participant{ socketDescriptor, this });

@@ -17,6 +17,7 @@ public:
 private:
     void send();
     void setName();
+    void ban();
 
 private:
     Ui::MainView _ui;

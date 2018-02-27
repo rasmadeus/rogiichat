@@ -43,6 +43,11 @@ Participant::Participant(qintptr socketDescriptor, QObject* parent)
     _socket.setSocketDescriptor(socketDescriptor);
 }
 
+void Participant::close()
+{
+    _socket.close();
+}
+
 void Participant::send(const QString& msg)
 {
     sendData(MsgType::Msg, msg);

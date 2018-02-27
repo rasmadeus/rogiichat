@@ -19,6 +19,7 @@ public:
     void appendParticipant(const QHostAddress& ip, quint16 port);
     void setName(const QString& name);
     void send(const QString& msg);
+    void ban(const QModelIndex& index);
 
 signals:
     void connected(const QString& header, const QString& body);

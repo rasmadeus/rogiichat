@@ -18,7 +18,7 @@ void Client::start()
 {
     _notifySocket.bind(QHostAddress::Any, ::broadcastPort, QUdpSocket::ShareAddress | QUdpSocket::ReuseAddressHint);
 
-    static const std::chrono::seconds serverLookInterval{ 1 };
+    static const std::chrono::seconds serverLookInterval{ 2 };
     _serverLookTimerId = startTimer(serverLookInterval);
 }
 

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>600</width>
-    <height>400</height>
+    <width>800</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -60,7 +60,7 @@
      <item>
       <widget class="QPushButton" name="removeParticipantButton">
        <property name="text">
-        <string>Remove selected</string>
+        <string>Ban selected participant for a few seconds</string>
        </property>
       </widget>
      </item>
